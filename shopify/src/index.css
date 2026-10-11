@@ -199,3 +199,57 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+ /* Products page  */
+.page-title {
+  margin-bottom: 16px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.filter-input {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--text);
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.price-input {
+  width: 100px;
+}
+
+.result-count {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+@media (max-width: 600px) {
+  .filter-input,
+  .filters .btn {
+    width: 100%;
+  }
+  .price-input {
+    width: calc(50% - 5px);
+  }
+}
