@@ -11,6 +11,7 @@ import OrderDetails from "./pages/OrderDetails";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -21,11 +22,11 @@ function App() {
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/orders/:orderId" element={<OrderDetails />} />
+        <Route path="/checkout" element={ <ProtectedRoute> <Checkout /> </ProtectedRoute>} />
+        <Route path="/orders" element={<ProtectedRoute> <Orders /> </ProtectedRoute>} />
+        <Route path="/orders/:orderId" element={<ProductDetails> <OrderDetails /> </ProductDetails>} />
         <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

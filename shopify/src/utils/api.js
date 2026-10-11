@@ -1,10 +1,11 @@
 const BASE_URL = "https://dummyjson.com";
+const USD_TO_INR =96.6;
 
 const normalize = (p) => ({
   id: p.id,
   title: p.title,
   description: p.description,
-  price: p.price,
+  price: Math.round(p.price*USD_TO_INR),
   category: p.category,
   brand: p.brand || "",
   image: p.thumbnail,
