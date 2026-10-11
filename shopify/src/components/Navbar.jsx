@@ -16,7 +16,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar-inner">
         <Link to="/" className="logo" onClick={close}>
-          🛍️ ShopEasy
+          🛍️ Shopify
         </Link>
 
         <button
